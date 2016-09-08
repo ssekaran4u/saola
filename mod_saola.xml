@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+    <name>mod_saola</name>
+    <author>Krishnan</author>
+    <creationDate>September 2016</creationDate>
+    <copyright>Copyright (C) 2016, Krishnan. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>krishnan57474@gmail.com</authorEmail>
+    <authorUrl>https://github.com/krishnan57474</authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_SAOLA_XML_DESC</description>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/mysql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/mysql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files>
+        <folder>assets</folder>
+        <folder>images</folder>
+        <folder>language</folder>
+        <folder>sql</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>LICENSE.txt</filename>
+        <filename module="mod_saola">mod_saola.php</filename>
+        <filename>mod_saola.xml</filename>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="recipient"
+                    type="textarea"
+                    rows="2"
+                    cols="5"
+                    required="true"
+                    label="SAOLA_FIELD_LABEL_RECIPIENT"
+                    description="SAOLA_FIELD_DESC_RECIPIENT" />
+
+                <field
+                    name="cc"
+                    type="textarea"
+                    rows="2"
+                    cols="5"
+                    label="SAOLA_FIELD_LABEL_CC"
+                    description="SAOLA_FIELD_DESC_CC" />
+
+                <field
+                    name="bcc"
+                    type="textarea"
+                    rows="2"
+                    cols="5"
+                    label="SAOLA_FIELD_LABEL_BCC"
+                    description="SAOLA_FIELD_DESC_BCC" />
+
+                <field
+                    name="subject"
+                    type="textarea"
+                    rows="2"
+                    cols="5"
+                    required="true"
+                    label="SAOLA_FIELD_LABEL_SUBJECT"
+                    description="SAOLA_FIELD_DESC_SUBJECT" />
+
+                <field
+                    name="template"
+                    type="list"
+                    default="1"
+                    label="SAOLA_FIELD_LABEL_TEMPLATE"
+                    description="SAOLA_FIELD_DESC_TEMPLATE">
+                    <option value="default">JDEFAULT</option>
+                </field>
+
+                <field
+                    name="credits"
+                    type="list"
+                    default="1"
+                    label="SAOLA_FIELD_LABEL_CREDITS"
+                    description="SAOLA_FIELD_DESC_CREDITS">
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="attach">
+                <field
+                    name="attach_multiple"
+                    type="list"
+                    required="true"
+                    default="1"
+                    label="SAOLA_FIELD_LABEL_ATTACH_MULTIPLE"
+                    description="SAOLA_FIELD_DESC_ATTACH_MULTIPLE">
+                    <option value="1">JENABLED</option>
+                    <option value="0">JDISABLED</option>
+                </field>
+
+                <field
+                    name="attach_count"
+                    type="tex"
+                    required="true"
+                    default="2"
+                    label="SAOLA_FIELD_LABEL_ATTACH_COUNT"
+                    description="SAOLA_FIELD_DESC_ATTACH_COUNT" />
+
+                <field
+                    name="attach_types"
+                    type="textarea"
+                    rows="2"
+                    cols="5"
+                    required="true"
+                    default="txt, pdf"
+                    label="SAOLA_FIELD_LABEL_ATTACH_TYPE"
+                    description="SAOLA_FIELD_DESC_ATTACH_TYPE" />
+
+                <field
+                    name="attach_size"
+                    type="text"
+                    required="true"
+                    default="1024"
+                    label="SAOLA_FIELD_LABEL_ATTACH_SIZE"
+                    description="SAOLA_FIELD_DESC_ATTACH_SIZE" />
+            </fieldset>
+
+            <fieldset name="captcha">
+                <field
+                    name="captcha_verify"
+                    type="list"
+                    default="1"
+                    label="SAOLA_FIELD_LABEL_CAPTCHA_VERIFY"
+                    description="SAOLA_FIELD_DESC_CAPTCHA_VERIFY">
+                    <option value="1">JENABLED</option>
+                    <option value="0">JDISABLED</option>
+                </field>
+
+                <field
+                    name="captcha_wlength"
+                    type="tex"
+                    required="true"
+                    default="4"
+                    label="SAOLA_FIELD_LABEL_CAPTCHA_WLENGTH"
+                    description="SAOLA_FIELD_DESC_CAPTCHA_WLENGTH" />
+            </fieldset>
+
+            <fieldset name="message">
+                <field
+                    name="msg_success"
+                    type="textarea"
+                    rows="5"
+                    cols="5"
+                    label="SAOLA_FIELD_LABEL_MSG_SUCCESS"
+                    description="SAOLA_FIELD_DESC_MSG_SUCCESS" />
+
+                <field
+                    name="msg_error"
+                    type="textarea"
+                    rows="5"
+                    cols="5"
+                    label="SAOLA_FIELD_LABEL_MSG_ERROR"
+                    description="SAOLA_FIELD_DESC_MSG_ERROR" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
