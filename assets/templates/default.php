@@ -42,10 +42,7 @@ defined('_JEXEC') or die;
 <title><?php echo $this->params->get('subject'); ?></title>
 </head>
 <body style="background-color:#ebebeb;padding:0;margin:0;width:100%">
-<table cellspacing="0" cellpadding="0" style="background-color:#ebebeb;font-family:Arial,Helvetica,sans-serif;width:100%;border:0">
-<tr>
-<td style="padding:30px 10px">
-<table cellspacing="0" cellpadding="0" style="min-width:300px;max-width:540px;margin:0 auto;width:100%;border:0">
+<table cellspacing="0" cellpadding="0" style="font-family:Arial,Helvetica,sans-serif;min-width:300px;max-width:540px;margin:0 auto;width:100%;border:0;padding:30px 10px">
 <tr>
 <td style="background-color:#235daa;text-align:center;padding:30px 20px;-webkit-border-radius:8px 8px 0 0;-moz-border-radius:8px 8px 0 0;border-radius:8px 8px 0 0">
 <a href="<?php echo JUri::base(); ?>" style="color:#fff;text-decoration:none;font-size:26px;font-weight:bold"><?php echo JFactory::getConfig()->get('sitename'); ?></a>
@@ -89,20 +86,20 @@ Attachments:
 </td>
 </tr>
 <?php endif; ?>
-<?php foreach ($this->attachments as $_attach): ?>
 <tr>
 <td style="background-color:#fff;padding:0 20px">
 <table cellspacing="0" cellpadding="0" style="margin:0 auto;border:0;width:100%">
+<?php foreach ($this->attachments as $_attach): ?>
 <tr>
 <td style="font-size:14px;color:#A1A2A5;padding:5px 10px"><?php echo htmlentities($_attach['real_name'], ENT_QUOTES, 'UTF-8'); ?></td>
 <td>
 <a href="<?php echo JUri::current() . '?saola-download=' . $_attach['secret_key']; ?>" style="font-size:14px;color:#666">Download</a>
 </td>
 </tr>
+<?php endforeach; ?>
 </table>
 </td>
 </tr>
-<?php endforeach; ?>
 <tr>
 <td style="background-color:#fff;padding:5px 20px;-webkit-border-radius:0 0 8px 8px;-moz-border-radius:0 0 8px 8px;border-radius:0 0 8px 8px">
 &nbsp;
@@ -117,9 +114,6 @@ Powered by Saola
 </td>
 </tr>
 <?php endif; ?>
-</table>
-</td>
-</tr>
 </table>
 </body>
 </html>
