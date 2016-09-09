@@ -131,12 +131,12 @@ class Saola
      */
     protected function files($key)
     {
+        $files = array();
+
         if (!key_exists($key, $_FILES))
         {
-            return NULL;
+            return $files;
         }
-
-        $files = array();
 
         foreach ($_FILES[$key] as $k => $v)
         {

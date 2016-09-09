@@ -85,7 +85,6 @@ Attachments:
 </p>
 </td>
 </tr>
-<?php endif; ?>
 <tr>
 <td style="background-color:#fff;padding:0 20px">
 <table cellspacing="0" cellpadding="0" style="margin:0 auto;border:0;width:100%">
@@ -100,6 +99,7 @@ Attachments:
 </table>
 </td>
 </tr>
+<?php endif; ?>
 <tr>
 <td style="background-color:#fff;padding:5px 20px;-webkit-border-radius:0 0 8px 8px;-moz-border-radius:0 0 8px 8px;border-radius:0 0 8px 8px">
 &nbsp;
