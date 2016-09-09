@@ -108,7 +108,7 @@
                     name="attach_count"
                     type="tex"
                     required="true"
-                    default="2"
+                    default="0"
                     label="SAOLA_FIELD_LABEL_ATTACH_COUNT"
                     description="SAOLA_FIELD_DESC_ATTACH_COUNT" />
 

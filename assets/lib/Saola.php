@@ -258,7 +258,13 @@ class Saola
     {
         $attach_info = array();
         $attachments = array();
-        $attach_count = $this->params->get('attach_multiple') ? $this->params->get('attach_count') : 1;
+        $attach_count = 1;
+
+        if (!is_null($this->params->get('attach_multiple')))
+        {
+            $attach_count = $this->params->get('attach_count');
+            $attach_count = $attach_count ? $attach_count : NULL;
+        }
 
         foreach (array_slice($this->files($afield), 0, $attach_count) as $_attach)
         {
