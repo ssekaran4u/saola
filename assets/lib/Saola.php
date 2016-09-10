@@ -687,8 +687,8 @@ class Saola
     public function isFormSubmit()
     {
         return ($this->post('saola-submit')
-            && $this->session('csrf')
-            && ($this->post($this->session('csrf')[0]) === $this->session('csrf')[1]));
+            && $this->session('saola_csrf')
+            && ($this->post($this->session('saola_csrf')[0]) === $this->session('saola_csrf')[1]));
     }
 
     /**
@@ -699,7 +699,7 @@ class Saola
     public function isValidCaptcha()
     {
         if ($this->params->get('captcha_verify')
-            && (!$this->session('saola') || $this->session('saola') !== $this->post('saola-captcha')))
+            && (!$this->session('saola_captcha') || $this->session('saola_captcha') !== $this->post('saola-captcha')))
         {
             $this->errors[] = JText::_('SAOLA_ERROR_CAPTCHA_VERIFICATION');
         }

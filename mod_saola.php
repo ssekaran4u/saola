@@ -64,7 +64,7 @@ if ($params->get('captcha_verify'))
     ));
 
     // store captcha in session
-    $_SESSION['saola'] = $captcha['word'];
+    $_SESSION['saola_captcha'] = $captcha['word'];
 }
 
 $csrf = array(
@@ -73,6 +73,6 @@ $csrf = array(
 );
 
 // store csrf in session
-$_SESSION['csrf'] = array($csrf['name'], $csrf['hash']);
+$_SESSION['saola_csrf'] = array($csrf['name'], $csrf['hash']);
 
 require JModuleHelper::getLayoutPath('mod_saola');
